@@ -1,6 +1,151 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <a href="index.html">main page</a>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title</title>
+
+  <style>
+    body {
+      background-color: #222;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: left;
+    }
+
+    h1 {
+     position: sticky;
+     top: 0;
+     background-color: #222;
+     padding: 15px 0;
+     margin: 0 0 20px 0;
+     z-index: 1000;
+     border-bottom: 1px solid #333;
+    }
+
+    .subtitle {
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+
+    .meta li {
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 15px;
+      padding: 10px 14px;
+      background-color: #111;
+      border: 1px solid #333;
+      border-radius: 6px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    ul {
+      line-height: 1.6;
+    }
+
+    .project-image {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 6px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    a {
+      color: #6ea8fe;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      margin-top: 40px;
+      display: inline-block;
+    }
+
+    .project-header {
+     position: sticky;
+     top: 10px;
+     background-color: #222;
+     padding: 15px 20px;
+     z-index: 1000;
+     border: 1px solid #333;
+     border-radius: 6px;
+    }
+
+    .project-header h1 {
+     margin: 5px 0 0 0;
+    }
+
+    .back-link {
+     font-size: 14px;
+     color: #6ea8fe;
+     text-decoration: none;
+    }
+
+    .back-link:hover {
+     text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Project Title -->
+    <div class="project-header">
+        <h1>Project Title</h1>
+        <a href="../index.html" class="back-link">← Portfolio</a>
+    </div>
+    <p class="subtitle">
+      summary
+    </p>
+
+    <!-- Project Metadata -->
+    <ul class="meta">
+      <li><strong>thing: </strong> exact</li>
+    </ul>
+
+    <!-- Problem Section -->
+    <h2>Problem</h2>
+    <p>
+        problem
+    </p>
+
+    <!-- Solution Section -->
+    <h2>Solution</h2>
+    <p>
+        solution
+    </p>
+
+    <!-- Technical Highlights -->
+    <h2>Technical Highlights</h2>
+    <ul>
+      <li>item</li>
+    </ul>
+
+    <!-- Major Learnings -->
+    <h2>Major Learnings</h2>
+    <ul>
+      <li>item</li>
+    </ul>
+
+  </div>
+</body>
 </html>
