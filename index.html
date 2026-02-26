@@ -1,105 +1,258 @@
 <!DOCTYPE html>
 <html>
-<head style="text-align: center; color: whitesmoke;">
-    <title>Hello World</title>
-    <h1><b>Jack Rissling</b></h1>
-    <h2></h2>
-</head>
-<body style="text-align: center;">
-    <a href="project1">GMTK Game Jam Submission Website</a>
-    <a href="project2">Paper I wrote to explain the Basics of AI</a>
-    <a href="project3">MNIST Handwriting recognition model I made</a>
-</body>
-    <style>
-    body {
-        background-color: #222222;
-        color: white;
-    }
-    </style>
-<div id="sections"></div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Jack Rissling</title>
+  <style>
+   body {
+  background-color: #222222;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
 
-<template id="expandTemplate">
-  <div class="expandBox">
-    <details>
-      <summary>
-        <span class="label"></span>
-        <span class="icon">+</span>
-      </summary>
-      <div class="content">
-        <table>
-          <thead>
-            <tr>
-              <th>Tech</th>
-              <th>Status</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody class="rows"></tbody>
-        </table>
-      </div>
-    </details>
-  </div>
-</template>
+h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  margin-bottom: 8px;
+}
 
-<style>
-  body { background:#000; color:#fff; font-family: Arial, sans-serif; }
-  .expandBox { max-width: 700px; margin: 20px auto; }
-  details { background:#111; border:1px solid #222; border-radius:8px; overflow:hidden; }
-  summary { list-style:none; padding:16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-weight:bold; }
-  summary::-webkit-details-marker { display:none; }
-  .icon { font-size:20px; transition: transform 0.2s ease; }
-  details[open] .icon { transform: rotate(45deg); }
-  .content { padding:16px; border-top:1px solid #222; }
-  table { width:100%; border-collapse: collapse; }
-  th, td { padding:10px; border-bottom:1px solid #222; text-align:left; }
-  th { color:#aaa; }
-</style>
+.github-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  word-break: break-word;
+}
 
-<script>
-  const sections = [
-    {
-      label: "Projects",
-      rows: [
-        { tech: "HTML/CSS", status: "Complete", date: "Feb 2026" },
-        { tech: "Java", status: "In Progress", date: "Jan 2026" },
-      ],
-    },
-    {
-      label: "Coursework",
-      rows: [
-        { tech: "Calc III", status: "A/B", date: "Spring 2026" },
-        { tech: "Linear Algebra", status: "A", date: "Spring 2026" },
-      ],
-    },
-    {
-      label: "Experience",
-      rows: [
-        { tech: "Systems Eng Intern", status: "Completed", date: "Summer 2024" },
-        { tech: "Game Jam (GMTK)", status: "Top ~28%", date: "2024" },
-      ],
-    },
-  ];
+.expandBox {
+  max-width: 900px;
+  width: 100%;
+  margin: 20px auto;
+  text-align: left;
+}
 
-  const container = document.getElementById("sections");
-  const tpl = document.getElementById("expandTemplate");
+details {
+  background:#111;
+  border:1px solid #222;
+  border-radius:8px;
+  overflow:hidden;
+}
 
-  for (const section of sections) {
-    const node = tpl.content.cloneNode(true);
+summary {
+  list-style:none;
+  padding:16px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:bold;
+}
 
-    node.querySelector(".label").textContent = section.label;
+summary::-webkit-details-marker {
+  display:none;
+}
 
-    const tbody = node.querySelector(".rows");
-    for (const r of section.rows) {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${r.tech}</td>
-        <td>${r.status}</td>
-        <td>${r.date}</td>
-      `;
-      tbody.appendChild(tr);
-    }
+.icon {
+  font-size:20px;
+  transition: transform 0.2s ease;
+}
 
-    container.appendChild(node);
+details[open] .icon {
+  transform: rotate(45deg);
+}
+
+.content {
+  padding:16px;
+  border-top:1px solid #222;
+  overflow-x: auto; /* important for mobile tables */
+}
+
+/* TABLE RESPONSIVE FIX */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px; /* prevents squishing */
+}
+
+th, td {
+  padding:10px;
+  border-bottom:1px solid #222;
+  text-align:left;
+}
+
+th {
+  color:#aaa;
+}
+
+/* Improve mobile spacing */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
   }
-</script>
+
+  summary {
+    padding: 12px;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <h1><b>Jack Rissling</b></h1>
+  <a href="https://github.com/narvintino" target="_blank" style="display:inline; font-weight:bold;">github</a>
+  <div id="sections"></div>
+  <template id="expandTemplate">
+    <div class="expandBox">
+      <details>
+        <summary>
+          <span class="label"></span>
+          <span class="icon">+</span>
+        </summary>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="rows"></tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+  </template>
+
+  <script>
+    const sections = [
+      {
+        label: "Projects",
+        format: 2,
+        header1: "Project Title",
+        header2: "1 Sentence Description",
+        rows: [
+          { title: "Government Reporting", description: "Designed and delivered a custom reporting application for a local government client during my internship at CAS Severn.", link: "project1"},
+          { title: "GMTK2024 Game Jam", description: "Backend architect on a 10-person team project that ranked 2136 out of 7643 submissions.", link: "project2" },
+          { title: "AI Research Paper", description: "Authored a technical paper explaining neural networks and modern AI architectures for a non-technical audience.", link: "project3"},
+        ],
+      },
+      {
+        label: "Relevant Courses",
+        format: 3,
+        header1: "Course",
+        header2: "Course Descrption",
+        header3: "Achieved Grade",
+        rows: [
+          { title: "CSIT 210", description: "Intro to Programing", grade: "B"},
+          { title: "CSIT 211", description: "Advanced Programing", grade: "In Progress"},
+          { title: "CSIT 214", description: "C++ Programing", grade: "B" },
+          { title: "MATH 257", description: "Linear Algebra", grade: "A"},
+          { title: "MATH 243", description: "Discrete Mathematics", grade: "A"},
+          { title: "MATH 251", description: "Calculus 1", grade: "A"},
+          { title: "MATH 252", description: "Calculus 2", grade: "B"},
+          { title: "MATH 253", description: "Calculus 3", grade: "In Progress"},
+        ],
+      },
+      {
+        label: "Programming Languages",
+        format: 2,
+        header1: "Language",
+        header2: "Comfort Level out of 10",
+        rows: [
+          { title: "C#", description: "10/10" },
+          { title: "C++", description: "8/10" },
+          { title: "Java", description: "9/10" },
+          { title: "SQL", description: "7/10" },
+          { title: "HTML/CSS", description: "7/10" },
+        ],
+      },
+      {
+        label: "Professional Expirence",
+        format: 4,
+        header1: "Company",
+        header2: "Position",
+        header3: "Start Date",
+        header4: "End Date",
+        rows: [
+          { title: "Cas Severn", description: "Systems Engineering Intern", col3: "June 2022", col4: "March 2024"},
+          { title: "Baltimore County Department of Parks and Recreation", description: "Program Lead", col3: "October 2025", col4: "Present"},
+          { title: "Giant Food", description: "Cashier", col3: "August 2024", col4: "Present"},
+        ],
+      },
+    ];
+  
+    const container = document.getElementById("sections");
+    const tpl = document.getElementById("expandTemplate");
+
+    for (const section of sections) {
+  const node = tpl.content.cloneNode(true);
+
+  node.querySelector(".label").textContent = section.label;
+
+  const ths = node.querySelectorAll("thead th");
+  const fmt = section.format ?? 3;
+
+  ths[0].textContent = section.header1 ?? "sec 1";
+  ths[1].textContent = section.header2 ?? "sec 2";
+  ths[2].textContent = section.header3 ?? "sec 3";
+  ths[3].textContent = section.header4 ?? "sec 4";
+
+  /* show right amount of headers depending on format*/
+  for (let i = 0; i < 4; i++) {
+    ths[i].style.display = (fmt > i) ? "" : "none";
+  }
+
+  const tbody = node.querySelector(".rows");
+
+  for (const r of section.rows) {
+    const tr = document.createElement("tr");
+
+    const td1 = document.createElement("td");
+    if (r.link) {
+      const a = document.createElement("a");
+      a.href = `./${r.link}.html`;
+      a.textContent = r.title ?? "";
+      a.style.color = "white";
+      td1.appendChild(a);
+    } else {
+      td1.textContent = r.title ?? "";
+    }
+
+    const td2 = document.createElement("td");
+    td2.textContent = r.description ?? "";
+
+    const td3 = document.createElement("td");
+    td3.textContent = r.grade ?? r.date ?? r.col3 ?? "";
+
+    const td4 = document.createElement("td");
+    td4.textContent = r.col4 ?? "";
+
+    /*show right amount of cells depending on format*/
+    td1.style.display = (fmt >= 1) ? "" : "none";
+    td2.style.display = (fmt >= 2) ? "" : "none";
+    td3.style.display = (fmt >= 3) ? "" : "none";
+    td4.style.display = (fmt >= 4) ? "" : "none";
+
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+
+    tbody.appendChild(tr);
+  }
+
+  container.appendChild(node);
+}
+  </script>
+</body>
 </html>
