@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Title</title>
+  <title>Government Reporting Software | Jack Rissling</title>
 
   <style>
     body {
@@ -110,40 +110,52 @@
 
     <!-- Project Title -->
     <div class="project-header">
-        <h1>Project Title</h1>
+        <h1>Government Reporting Software | Jack Rissling</h1>
         <a href="../index.html" class="back-link">← Portfolio</a>
     </div>
     <p class="subtitle">
-      summary
+        During my Systems Engineering Internship at CAS Severn, a local government client requested a program to automate record-keeping for their Nutanix cluster and generate structured Excel reports for internal use. As the only programmer on the team, I architected and development the software from the ground up.
     </p>
-
-    <!-- Project Metadata -->
-    <ul class="meta">
-      <li><strong>thing: </strong> exact</li>
-    </ul>
 
     <!-- Problem Section -->
     <h2>Problem</h2>
     <p>
-        problem
+        The client requested a program to automate record-keeping for their Nutanix cluster by generating structured Excel reports. They were operating on a legacy version of Nutanix with an API that lacked publicly available documentation. I did not have direct access to the client’s system, which was uniquely configured, and all communication was conducted through a manager.
     </p>
 
     <!-- Solution Section -->
     <h2>Solution</h2>
     <p>
-        solution
+        I reverse-engineered the legacy API from modern documentation to build a Windows-based GUI application that securely interfaced with the client's cluster and automated report generation. The application standardized cluster reporting and eliminated manual record compilation.
     </p>
+
+    <h2>Technologies Used</h2>
+    <ul>
+        <li>C#</li>
+        <li>.NET Framework</li>
+        <li>Windows Forms (event-driven desktop application architecture)</li>
+        <li>Nutanix Prism API (v1 - Rest integration)</li>
+        <li>Newtonsoft.Json.Linq (dynamic JSON parsing)</li>
+        <li>OpenXML (Excel report generation)</li>
+    </ul>
 
     <!-- Technical Highlights -->
     <h2>Technical Highlights</h2>
     <ul>
-      <li>item</li>
+      <li>Designed and developed a Windows-based GUI application, expanding the original CLI requirement to improve usability.</li>
+      <li>Implemented robust error handling and logging systems to enable remote troubleshooting without direct access to the client's cluster.</li>
+      <li>Translated client requirements into technical specifications while coordinating communication through management.</li>
+      <li>Independently architected and delivered production software adopted by a local government client.</li>
     </ul>
 
     <!-- Major Learnings -->
     <h2>Major Learnings</h2>
     <ul>
-      <li>item</li>
+      <li>Designed and integrated with APIs, including reverse-engineering undocumented legacy systems.</li>
+      <li>Applied defensive programming techniques to improve reliability, validation, and error handling.</li>
+      <li>Architected and delivered a complete software solution independently, from requirements analysis to deployment.</li>
+      <li>Translated ambiguous requirements into a scalable, maintainable system design.</li>
+      <li>Adapted to real-world engineering constraints, including limited documentation, restricted system access, and indirect client communication.</li>
     </ul>
 
   </div>
