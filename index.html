@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head style="text-align: center; color: whitesmoke;">
     <title>Hello World</title>
+    <h1><b>Jack Rissling</b></h1>
+    <h2></h2>
 </head>
-<body>
-    <h1>Hello, World!</h1>
+<body style="text-align: center;">
     <a href="project1">GMTK Game Jam Submission Website</a>
     <a href="project2">Paper I wrote to explain the Basics of AI</a>
     <a href="project3">MNIST Handwriting recognition model I made</a>
 </body>
+    <style>
+    body {
+        background-color: #222222;
+        color: white;
+    }
+    </style>
+<div id="sections"></div>
+
+<template id="expandTemplate">
+  <div class="expandBox">
+    <details>
+      <summary>
+        <span class="label"></span>
+        <span class="icon">+</span>
+      </summary>
+      <div class="content">
+        <table>
+          <thead>
+            <tr>
+              <th>Tech</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody class="rows"></tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</template>
+
+<style>
+  body { background:#000; color:#fff; font-family: Arial, sans-serif; }
+  .expandBox { max-width: 700px; margin: 20px auto; }
+  details { background:#111; border:1px solid #222; border-radius:8px; overflow:hidden; }
+  summary { list-style:none; padding:16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-weight:bold; }
+  summary::-webkit-details-marker { display:none; }
+  .icon { font-size:20px; transition: transform 0.2s ease; }
+  details[open] .icon { transform: rotate(45deg); }
+  .content { padding:16px; border-top:1px solid #222; }
+  table { width:100%; border-collapse: collapse; }
+  th, td { padding:10px; border-bottom:1px solid #222; text-align:left; }
+  th { color:#aaa; }
+</style>
+
+<script>
+  const sections = [
+    {
+      label: "Projects",
+      rows: [
+        { tech: "HTML/CSS", status: "Complete", date: "Feb 2026" },
+        { tech: "Java", status: "In Progress", date: "Jan 2026" },
+      ],
+    },
+    {
+      label: "Coursework",
+      rows: [
+        { tech: "Calc III", status: "A/B", date: "Spring 2026" },
+        { tech: "Linear Algebra", status: "A", date: "Spring 2026" },
+      ],
+    },
+    {
+      label: "Experience",
+      rows: [
+        { tech: "Systems Eng Intern", status: "Completed", date: "Summer 2024" },
+        { tech: "Game Jam (GMTK)", status: "Top ~28%", date: "2024" },
+      ],
+    },
+  ];
+
+  const container = document.getElementById("sections");
+  const tpl = document.getElementById("expandTemplate");
+
+  for (const section of sections) {
+    const node = tpl.content.cloneNode(true);
+
+    node.querySelector(".label").textContent = section.label;
+
+    const tbody = node.querySelector(".rows");
+    for (const r of section.rows) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${r.tech}</td>
+        <td>${r.status}</td>
+        <td>${r.date}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+
+    container.appendChild(node);
+  }
+</script>
 </html>
